@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body data-bs-spy="scroll">
+
+  <!---start of home section-->
+  <section class="home h-screen" id="Home">
+
+    <!---start of nav section-->
+
+    
+   <div class="navbar bg-black/45 text-white shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li><a>Item 1</a></li>
+        <li>
+          <a>Parent</a>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </li>
+        <li><a>Item 3</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl">daisyUI</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a>Item 1</a></li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a>Item 3</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn bg-black">Button</a>
+  </div>
+</div>
+      
+
+    <!---end of nav section-->
+
+
+    <!---start of home-content section-->
+    <div
+      class="home-content w-full h-full bg-black/55 flex flex-col items-center justify-center">
+      <div class="container text-center">
+        <h1 class="mb-4">I am Ali Hassan</h1>
+        <p><span>|</span></p>
+      </div>
+    </div>
+    <!---start of home-content section-->
+
+  </section>
+  <!---end of home section-->
+
+  <!-- stART of About me section -->
+  <section id="About-me" class="about">
+    <!-- Slider main container -->
+<div class="bg-slate-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="text-center mb-8 max-w-lg">
+        <h1 class="text-3xl font-bold text-slate-800">ZigZag Slider</h1>
+        <p class="text-slate-500 mt-2">
+            <span class="font-bold text-slate-700">Right</span> becomes Center.<br>
+            <span class="font-bold text-slate-700">Left</span> crosses to Right.<br>
+            <span class="font-bold text-slate-700">Back</span> moves to Left.
+        </p>
+    </div>
+
+    <div class="card-container max-w-3xl" id="sliderContainer">
+        <!-- Cards injected via JS -->
+    </div>
+
+    <div class="mt-12">
+        <button id="nextBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl transition-transform hover:scale-105 active:scale-95 flex items-center gap-3">
+            Next Slide
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+    </div>
+</div>
+  </section>
+  <!-- end of about me section -->
+
+  <!-- start of services section -->
+  <section id="services" class="service pt-5">
+    <div class="container mx-auto text-center">
+      <h3 class="titleB">SERVICES</h3>
+      <p class="subtitle">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      </p>
+      <div class="line-mf mb-5"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="box col-md-4">
+          <div class="inner text-center flex flex-wrap items-center content-center flex-col">
+            <div class="icon flex items-center content-center mb-3">
+              <i class="fa-solid fa-briefcase fa-xl"></i>
+            </div>
+            <h2 class="box-title">WEB DESIGN</h2>
+            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
+              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+        </div>
+        <div class="box col-md-4">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-money-check"></i>
+            </div>
+            <h2 class="box-title">Web Development</h2>
+            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
+              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+        </div>
+        <div class="box col-md-4">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-chart-simple"></i>
+            </div>
+            <h2 class="box-title">Photography</h2>
+            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
+              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+        </div>
+        <div class="box col-md-4">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-binoculars"></i>
+            </div>
+            <h2 class="box-title">Responsive Design</h2>
+            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
+              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+        </div>
+        <div class="box col-md-4">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-regular fa-sun"></i>
+            </div>
+            <h2 class="box-title">Graphic Design</h2>
+            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
+              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+        </div>
+        <div class="box col-md-4">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <h2 class="box-title">Marketing Services</h2>
+            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
+              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- end of services section -->
+  <!-- start of counter section -->
+  <section id="counter" class="counter relative">
+    <div class="layer bg-blue-400/50 absolute top-0 bottom-0 w-full h-full"></div>
+    <div class="container mx-auto position-relative">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="box col-sm-3 col-lg-3">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <h2 class="text-white text-xl mt-3">450</h2>
+            <p class="text-uppercase">works completed</p>
+          </div>
+        </div>
+        <div class="box col-sm-3 col-lg-3">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-regular fa-file-lines"></i>
+            </div>
+            <h2 class="text-light fw-normal">25</h2>
+            <p class="text-uppercase">years of experience</p>
+          </div>
+        </div>
+        <div class="box col-sm-3 col-lg-3">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h2 class="text-light fw-normal">550</h2>
+            <p class="text-uppercase">total clients</p>
+          </div>
+        </div>
+        <div class="box col-sm-3 col-lg-3">
+          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
+            <div class="icon d-flex align-items-center justify-content-center mb-3">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h2 class="text-light fw-normal">48</h2>
+            <p class="text-uppercase">award won</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end of counter section -->
+
+
+
+
+    <!-- start footer section -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <div class="">
+              <p class=" mb-1">© Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+              <div class="">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- end footer section -->
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="./src/js/Animation.js"></script>
+</body>
+
+</html>
