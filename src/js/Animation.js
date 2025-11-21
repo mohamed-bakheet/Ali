@@ -1,76 +1,109 @@
-const cards = [
-            { id: 1, title: "Main Focus", desc: "Starting Center", color: "bg-gradient-to-br from-indigo-500 to-purple-600" },
-            { id: 2, title: "On Deck", desc: "Starting Right", color: "bg-gradient-to-br from-blue-500 to-cyan-600" },
-            { id: 3, title: "In Queue", desc: "Starting Left", color: "bg-gradient-to-br from-emerald-500 to-teal-600" },
-            { id: 4, title: "Deep Back", desc: "Starting Behind", color: "bg-gradient-to-br from-orange-500 to-red-600" },
-            { id: 5, title: "Coming Soon", desc: "Hidden", color: "bg-gradient-to-br from-pink-500 to-rose-600" },
-            { id: 6, title: "Last One", desc: "Hidden", color: "bg-gradient-to-br from-slate-600 to-slate-800" },
-        ];
-
-        let activeIndex = 0;
-        const container = document.getElementById('sliderContainer');
-        const nextBtn = document.getElementById('nextBtn');
-
-        function init() {
-            cards.forEach((card, i) => {
-                const el = document.createElement('div');
-                el.className = 'card slider-card';
-                el.id = `card-${i}`;
-                el.innerHTML = `
-                    <div class="card-content ${card.color} text-white rounded-2xl h-full w-full">
-                        <h2 class="font-bold mb-2">${card.title}</h2>
-                        <p class="opacity-90 text-sm">${card.desc}</p>
-                        <div class="mt-auto font-mono text-lg opacity-75 font-bold">0${i + 1}</div>
-                    </div>
-                `;
-                container.appendChild(el);
-            });
-            updateClasses();
-        }
-
-        function updateClasses() {
-            const cardElements = document.querySelectorAll('.slider-card');
-            const total = cards.length;
-
-            cardElements.forEach((el, i) => {
-                // Calculate distance from active index
-                // 0 = Active (Center)
-                // 1 = Next (Right)
-                // 2 = Next+1 (Left)
-                // 3 = Next+2 (Back)
-                let diff = (i - activeIndex + total) % total;
-
-                el.className = 'card slider-card'; // Reset base class
-
-                if (diff === 0) {
-                    el.classList.add('pos-0'); // Active: Center
-                } else if (diff === 1) {
-                    el.classList.add('pos-1'); // 2nd: Right
-                } else if (diff === 2) {
-                    el.classList.add('pos-2'); // 3rd: Left
-                } else if (diff === 3) {
-                    el.classList.add('pos-3'); // 4th: Back
-                } else if (diff === total - 1) {
-                    // The one that just exited (Active - 1)
-                    el.classList.add('pos-exit');
-                } else {
-                    el.classList.add('pos-hidden');
+class ZigZagSlider {
+            // Added autoPlayDelay parameter (default 3000ms = 3 seconds)
+            constructor(containerId, autoPlayDelay = 3000) {
+                this.container = document.getElementById(containerId);
+                if (!this.container) {
+                    console.error(`Container ${containerId} not found`);
+                    return;
                 }
-            });
-        }
 
-        function nextSlide() {
-            activeIndex = (activeIndex + 1) % cards.length;
-            updateClasses();
-        }
+                this.wrapper = this.container.querySelector('.slider-perspective');
+                // Query specifically for .zz-card
+                this.cards = Array.from(this.container.querySelectorAll('.zz-card'));
+                this.nextBtn = this.container.querySelector('.js-next-btn');
+                
+                this.activeIndex = 0;
+                this.total = this.cards.length;
+                
+                // Autoplay settings
+                this.autoPlayDelay = autoPlayDelay;
+                this.intervalId = null;
 
-        nextBtn.addEventListener('click', nextSlide);
-        
-        // Click active card to next
-        container.addEventListener('click', (e) => {
-            if(e.target.closest('.pos-0')) {
-                nextSlide();
+                if (this.total === 0) {
+                    console.error("No cards found");
+                    return;
+                }
+
+                this.init();
             }
-        });
 
-        init();
+            init() {
+                this.cards.forEach((card, index) => {
+                    card.dataset.index = index;
+                });
+                this.updateClasses();
+
+                if (this.nextBtn) {
+                    this.nextBtn.addEventListener('click', () => {
+                        this.nextSlide();
+                        this.resetTimer(); // Reset timer on manual click
+                    });
+                }
+
+                this.wrapper.addEventListener('click', (e) => {
+                    // Check if click bubble up from inside a .zz-card
+                    const clickedWrapper = e.target.closest('.zz-card');
+                    if (clickedWrapper && clickedWrapper.classList.contains('pos-0')) {
+                        this.nextSlide();
+                        this.resetTimer(); // Reset timer on manual click
+                    }
+                });
+
+                // Pause on Hover Logic
+                this.container.addEventListener('mouseenter', () => this.stopAutoPlay());
+                this.container.addEventListener('mouseleave', () => this.startAutoPlay());
+
+                // Start the loop initially
+                this.startAutoPlay();
+            }
+
+            updateClasses() {
+                this.cards.forEach(card => {
+                    const index = parseInt(card.dataset.index);
+                    const diff = (index - this.activeIndex + this.total) % this.total;
+
+                    card.classList.remove('pos-0', 'pos-1', 'pos-2', 'pos-3', 'pos-exit', 'pos-hidden');
+
+                    if (diff === 0) card.classList.add('pos-0');
+                    else if (diff === 1) card.classList.add('pos-1');
+                    else if (diff === 2) card.classList.add('pos-2');
+                    else if (diff === 3) card.classList.add('pos-3');
+                    else if (diff === this.total - 1) card.classList.add('pos-exit');
+                    else card.classList.add('pos-hidden');
+                });
+            }
+
+            nextSlide() {
+                this.activeIndex = (this.activeIndex + 1) % this.total;
+                this.updateClasses();
+            }
+
+            // --- Autoplay Methods ---
+
+            startAutoPlay() {
+                // Prevent multiple intervals running at once
+                if (this.intervalId) return;
+                
+                this.intervalId = setInterval(() => {
+                    this.nextSlide();
+                }, this.autoPlayDelay);
+            }
+
+            stopAutoPlay() {
+                if (this.intervalId) {
+                    clearInterval(this.intervalId);
+                    this.intervalId = null;
+                }
+            }
+
+            // Restarts the timer (useful after manual interaction)
+            resetTimer() {
+                this.stopAutoPlay();
+                this.startAutoPlay();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize with ID and delay in milliseconds (e.g., 3000 = 3 seconds)
+            new ZigZagSlider('roadmap-section', 3000);
+        });

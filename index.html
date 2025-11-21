@@ -1,244 +1,505 @@
 <!DOCTYPE html>
+
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="./src/css/output.css">
-  <link rel="stylesheet" href="/style.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body data-bs-spy="scroll">
+    <title>Document</title>
 
-  <!---start of home section-->
-  <section class="home h-screen" id="Home">
+    <link rel="stylesheet" href="style/all.min.css" />
 
-    <!---start of nav section-->
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     
-   <div class="navbar bg-black/45 text-white shadow-sm">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-      </div>
-      <ul
-        tabindex="-1"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+
+  <body data-bs-spy="scroll">
+    <!---start of home section-->
+
+    <section class="home relative h-screen" id="Home">
+      <!---start of nav section-->
+
+      <div class="navbar bg-black/45 shadow-sm">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+
+            <ul
+              tabindex="-1"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Designes</a></li>
+
+              <li>
+                <a>motion graphic</a>
+
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </li>
+
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>
+
+          <div class="text-white">
+            <a class="btn btn-ghost text-xl" href="./index.html">daisyUI</a>
+          </div>
+        </div>
+
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu text-white menu-horizontal px-1">
+            <li><a href="./graphic.html">Designes</a></li>
+
+            <li>
+              <details>
+                <summary>Parent</summary>
+
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </details>
+            </li>
+
+            <li><a>motion graphic</a></li>
           </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <a class="btn btn-ghost text-xl">daisyUI</a>
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-  <div class="navbar-end">
-    <a class="btn bg-black">Button</a>
-  </div>
-</div>
-      
+        </div>
 
-    <!---end of nav section-->
-
-
-    <!---start of home-content section-->
-    <div
-      class="home-content w-full h-full bg-black/55 flex flex-col items-center justify-center">
-      <div class="container text-center">
-        <h1 class="mb-4">I am Ali Hassan</h1>
-        <p><span>|</span></p>
+        <div class="navbar-end text-white">
+          <a class="btn bg-black">Button</a>
+        </div>
       </div>
-    </div>
-    <!---start of home-content section-->
 
-  </section>
-  <!---end of home section-->
+      <!---end of nav section-->
 
-  <!-- stART of About me section -->
-  <section id="About-me" class="about">
-    <!-- Slider main container -->
-<div class="bg-slate-100 flex flex-col items-center justify-center min-h-screen p-4">
+      <!---start of home-content section-->
 
-    <div class="text-center mb-8 max-w-lg">
-        <h1 class="text-3xl font-bold text-slate-800">ZigZag Slider</h1>
-        <p class="text-slate-500 mt-2">
-            <span class="font-bold text-slate-700">Right</span> becomes Center.<br>
-            <span class="font-bold text-slate-700">Left</span> crosses to Right.<br>
-            <span class="font-bold text-slate-700">Back</span> moves to Left.
-        </p>
-    </div>
+      <div
+        class="w-full h-full bg-black/55 absolute top-0 flex flex-row gap-[200px] items-center justify-center"
+      >
+        <!-- The Button Container (HTML part) -->
 
-    <div class="card-container max-w-3xl" id="sliderContainer">
-        <!-- Cards injected via JS -->
-    </div>
+        <button
+          class="relative rounded-xl border-gray-500 shadow-2xl p-0.5 group hover:border-blue-400 overflow-hidden text-white border-4 cursor-pointer"
+        >
+          <!-- This is the inner content layer of the button. -->
 
-    <div class="mt-12">
-        <button id="nextBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl transition-transform hover:scale-105 active:scale-95 flex items-center gap-3">
-            Next Slide
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <a
+            href="./graphic.html"
+            class="relative z-10 block bg-linear-to-br from-blue-500 to-cyan-600 rounded-[0.625rem] px-8 py-4 text-lg font-semibold transition duration-300 group-hover:bg-linear-to-br group-hover:from-emerald-500 group-hover:to-teal-600 cursor-pointer"
+          >
+            Designs Page
+          </a>
         </button>
-    </div>
-</div>
-  </section>
-  <!-- end of about me section -->
 
-  <!-- start of services section -->
-  <section id="services" class="service pt-5">
-    <div class="container mx-auto text-center">
-      <h3 class="titleB">SERVICES</h3>
-      <p class="subtitle">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-      </p>
-      <div class="line-mf mb-5"></div>
+        <button
+          class="relative rounded-xl border-gray-500 shadow-2xl p-0.5 group hover:border-blue-400 overflow-hidden text-white border-4 cursor-pointer"
+        >
+          <!-- This is the inner content layer of the button. -->
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="box col-md-4">
-          <div class="inner text-center flex flex-wrap items-center content-center flex-col">
-            <div class="icon flex items-center content-center mb-3">
-              <i class="fa-solid fa-briefcase fa-xl"></i>
+          <a
+            class="relative z-10 block bg-linear-to-br from-blue-500 to-cyan-600 rounded-[0.625rem] px-8 py-4 text-lg font-semibold transition duration-300 group-hover:bg-linear-to-br group-hover:from-emerald-500 group-hover:to-teal-600 cursor-pointer"
+          >
+            Purchase Now
+          </a>
+        </button>
+
+        <button
+          class="relative rounded-xl border-gray-500 shadow-2xl p-0.5 group hover:border-blue-400 overflow-hidden text-white border-4 cursor-pointer"
+        >
+          <!-- This is the inner content layer of the button. -->
+
+          <a
+            class="relative z-10 block bg-linear-to-br from-blue-500 to-cyan-600 rounded-[0.625rem] px-8 py-4 text-lg font-semibold transition duration-300 group-hover:bg-linear-to-br group-hover:from-emerald-500 group-hover:to-teal-600 cursor-pointer"
+          >
+            Motion Graphics page
+          </a>
+        </button>
+      </div>
+
+      <!---start of home-content section-->
+    </section>
+
+    <!---end of home section-->
+
+    <!-- stART of About me section -->
+
+    <section id="About-me" class="about pt-5 mt-5">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold mb-4">DaisyUI + ZigZag Slider</h1>
+
+        <p class="opacity-70">
+          Using <code>.zz-card</code> for positioning to avoid conflicts with
+          DaisyUI's <code>.card</code>.
+        </p>
+      </div>
+
+      <!-- ================= SECTION 1: WITH DAISYUI CARDS INSIDE ================= -->
+
+      <div id="roadmap-section" class="max-w-4xl mx-auto mb-24">
+        <div class="text-center mb-8 px-4">
+          <div class="badge badge-primary badge-lg mb-2">Roadmap</div>
+
+          <h2 class="text-3xl font-bold">Product Timeline</h2>
+        </div>
+
+        <!-- Slider Wrapper -->
+
+        <div class="slider-perspective relative">
+          <!-- SLIDE 1: Using a DaisyUI Card INSIDE the wrapper -->
+
+          <div class="zz-card">
+            <div
+              class="card w-full h-full bg-primary text-primary-content shadow-xl"
+            >
+              <div class="card-body items-center text-center">
+                <h2 class="card-title text-3xl">Planning</h2>
+
+                <p>We defined the scope and core features.</p>
+
+                <div class="card-actions justify-end mt-auto">
+                  <div class="badge badge-outline">Q1 2024</div>
+                </div>
+              </div>
             </div>
-            <h2 class="box-title">WEB DESIGN</h2>
-            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+
+          <!-- SLIDE 2 -->
+
+          <div class="zz-card">
+            <div
+              class="card w-full h-full bg-secondary text-secondary-content shadow-xl"
+            >
+              <div class="card-body items-center text-center">
+                <h2 class="card-title text-3xl">Design</h2>
+
+                <p>Crafting the UI/UX experience.</p>
+
+                <div class="card-actions justify-end mt-auto">
+                  <div class="badge badge-outline">Q2 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 -->
+
+          <div class="zz-card">
+            <div
+              class="card w-full h-full bg-accent text-accent-content shadow-xl"
+            >
+              <div class="card-body items-center text-center">
+                <h2 class="card-title text-3xl">Build</h2>
+
+                <p>Developing the backend architecture.</p>
+
+                <div class="card-actions justify-end mt-auto">
+                  <div class="badge badge-outline">Q3 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 4 -->
+
+          <div class="zz-card">
+            <div
+              class="card w-full h-full bg-neutral text-neutral-content shadow-xl"
+            >
+              <div class="card-body items-center text-center">
+                <h2 class="card-title text-3xl">Launch</h2>
+
+                <p>Releasing to the public.</p>
+
+                <div class="card-actions justify-end mt-auto">
+                  <div class="badge badge-outline">Q4 2024</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="box col-md-4">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-solid fa-money-check"></i>
-            </div>
-            <h2 class="box-title">Web Development</h2>
-            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
-          </div>
+
+        <!-- Controls -->
+
+        <div class="flex justify-center mt-6">
+          <button
+            class="js-next-btn btn btn-wide btn-primary rounded-full shadow-lg group"
+          >
+            Next Step
+
+            <!-- Arrow Icon -->
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 transition-transform group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m-5-5h12"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="box col-md-4">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-solid fa-chart-simple"></i>
+      </div>
+    </section>
+
+    <!-- end of about me section -->
+
+    <!-- start of services section -->
+
+    <section id="services" class="service pt-5">
+      <div class="container mx-auto text-center">
+        <h3 class="titleB">SERVICES</h3>
+
+        <p class="subtitle">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </p>
+
+        <div class="line-mf mb-5"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="box col-md-4">
+            <div
+              class="inner text-center flex flex-wrap items-center content-center flex-col"
+            >
+              <div class="icon flex items-center content-center mb-3">
+                <i class="fa-solid fa-briefcase fa-xl"></i>
+              </div>
+
+              <h2 class="box-title">WEB DESIGN</h2>
+
+              <p class="box-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                adipisci eaque autem fugiat! Quia, provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
             </div>
-            <h2 class="box-title">Photography</h2>
-            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
           </div>
-        </div>
-        <div class="box col-md-4">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-solid fa-binoculars"></i>
+
+          <div class="box col-md-4">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-solid fa-money-check"></i>
+              </div>
+
+              <h2 class="box-title">Web Development</h2>
+
+              <p class="box-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                adipisci eaque autem fugiat! Quia, provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
             </div>
-            <h2 class="box-title">Responsive Design</h2>
-            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
           </div>
-        </div>
-        <div class="box col-md-4">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-regular fa-sun"></i>
+
+          <div class="box col-md-4">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+
+              <h2 class="box-title">Photography</h2>
+
+              <p class="box-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                adipisci eaque autem fugiat! Quia, provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
             </div>
-            <h2 class="box-title">Graphic Design</h2>
-            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
           </div>
-        </div>
-        <div class="box col-md-4">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-solid fa-calendar-days"></i>
+
+          <div class="box col-md-4">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-solid fa-binoculars"></i>
+              </div>
+
+              <h2 class="box-title">Responsive Design</h2>
+
+              <p class="box-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                adipisci eaque autem fugiat! Quia, provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
             </div>
-            <h2 class="box-title">Marketing Services</h2>
-            <p class="box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-              fugiat! Quia, provident vitae! Magni tempora perferendis eum non provident.</p>
+          </div>
+
+          <div class="box col-md-4">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-regular fa-sun"></i>
+              </div>
+
+              <h2 class="box-title">Graphic Design</h2>
+
+              <p class="box-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                adipisci eaque autem fugiat! Quia, provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
+            </div>
+          </div>
+
+          <div class="box col-md-4">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+
+              <h2 class="box-title">Marketing Services</h2>
+
+              <p class="box-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                adipisci eaque autem fugiat! Quia, provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-  </section>
-  <!-- end of services section -->
-  <!-- start of counter section -->
-  <section id="counter" class="counter relative">
-    <div class="layer bg-blue-400/50 absolute top-0 bottom-0 w-full h-full"></div>
-    <div class="container mx-auto position-relative">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="box col-sm-3 col-lg-3">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-solid fa-check"></i>
+    <!-- end of services section -->
+
+    <!-- start of counter section -->
+
+    <section id="counter" class="counter relative">
+      <div
+        class="layer bg-blue-400/50 absolute top-0 bottom-0 w-full h-full"
+      ></div>
+
+      <div class="container mx-auto position-relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="box col-sm-3 col-lg-3">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-solid fa-check"></i>
+              </div>
+
+              <h2 class="text-white text-xl mt-3">450</h2>
+
+              <p class="text-uppercase">works completed</p>
             </div>
-            <h2 class="text-white text-xl mt-3">450</h2>
-            <p class="text-uppercase">works completed</p>
           </div>
-        </div>
-        <div class="box col-sm-3 col-lg-3">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-regular fa-file-lines"></i>
+
+          <div class="box col-sm-3 col-lg-3">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-regular fa-file-lines"></i>
+              </div>
+
+              <h2 class="text-light fw-normal">25</h2>
+
+              <p class="text-uppercase">years of experience</p>
             </div>
-            <h2 class="text-light fw-normal">25</h2>
-            <p class="text-uppercase">years of experience</p>
           </div>
-        </div>
-        <div class="box col-sm-3 col-lg-3">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-solid fa-users"></i>
+
+          <div class="box col-sm-3 col-lg-3">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+
+              <h2 class="text-light fw-normal">550</h2>
+
+              <p class="text-uppercase">total clients</p>
             </div>
-            <h2 class="text-light fw-normal">550</h2>
-            <p class="text-uppercase">total clients</p>
           </div>
-        </div>
-        <div class="box col-sm-3 col-lg-3">
-          <div class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0">
-            <div class="icon d-flex align-items-center justify-content-center mb-3">
-              <i class="fa-solid fa-award"></i>
+
+          <div class="box col-sm-3 col-lg-3">
+            <div
+              class="inner text-center d-flex align-items-center justify-content-center flex-column pt-4 pt-md-0"
+            >
+              <div
+                class="icon d-flex align-items-center justify-content-center mb-3"
+              >
+                <i class="fa-solid fa-award"></i>
+              </div>
+
+              <h2 class="text-light fw-normal">48</h2>
+
+              <p class="text-uppercase">award won</p>
             </div>
-            <h2 class="text-light fw-normal">48</h2>
-            <p class="text-uppercase">award won</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- end of counter section -->
+    </section>
 
-
-
+    <!-- end of counter section -->
 
     <!-- start footer section -->
+
     <footer class="py-4">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
             <div class="">
-              <p class=" mb-1">© Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+              <p class="mb-1">
+                © Copyright <strong>DevFolio</strong>. All Rights Reserved
+              </p>
+
               <div class="">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by
+                <a href="https://bootstrapmade.com/">BootstrapMade</a>
               </div>
             </div>
           </div>
@@ -248,9 +509,8 @@
 
     <!-- end footer section -->
 
-  
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="./src/js/Animation.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <script src="./src/js/Animation.js"></script>
+  </body>
 </html>
