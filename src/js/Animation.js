@@ -107,3 +107,33 @@ class ZigZagSlider {
             // Initialize with ID and delay in milliseconds (e.g., 3000 = 3 seconds)
             new ZigZagSlider('roadmap-section', 3000);
         });
+
+
+        // slider swiper
+
+        var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+       autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+
+     var swiper = new Swiper(".mySwiper2", {
+      slidesPerView: 4,
+      spaceBetween: 60,
+       autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });

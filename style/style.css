@@ -10,23 +10,7 @@ body {
 
 
 
-h1,
 
-h2,
-
-h3,
-
-h4,
-
-h5,
-
-h6 {
-
-    color: #1e1e1e;
-
-
-
-}
 
 
 
@@ -120,6 +104,27 @@ a:not(.special) :hover {
 
 /*----end general styling */
 
+
+ .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 400px;
+      object-fit:fill;
+    }
 
 
 /* --- 3D SLIDER STYLES --- */
