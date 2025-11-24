@@ -112,8 +112,24 @@ class ZigZagSlider {
         // slider swiper
 
         var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 4,
-      spaceBetween: 30,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints:{
+        640: {
+            slidesPerView:2,
+            spaceBetween:10,
+        },
+        768:{
+           slidesPerView:3,
+            spaceBetween:20, 
+        },
+        1024:{
+           slidesPerView:5,
+            spaceBetween:30, 
+        },
+
+
+        },
        autoplay: {
         delay: 3500,
         disableOnInteraction: false,
@@ -126,8 +142,25 @@ class ZigZagSlider {
 
 
      var swiper = new Swiper(".mySwiper2", {
-      slidesPerView: 4,
-      spaceBetween: 60,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints:{
+        640: {
+            slidesPerView:2,
+            spaceBetween:10,
+        },
+        768:{
+           slidesPerView:3,
+            spaceBetween:20, 
+        },
+        1024:{
+           slidesPerView:5,
+            spaceBetween:60, 
+        },
+
+
+        },
+      
        autoplay: {
         delay: 3500,
         disableOnInteraction: false,
